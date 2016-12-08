@@ -10,8 +10,7 @@ $("#regulation-up").click(function(){thermostat.up();});
 
 $("#regulation-down").click(function(){thermostat.down();});
 
-$("#reset").click(function(){thermostat.reset();});
-
+$("#reset").click(function(){Thermostat.reset();});
 
 
 
