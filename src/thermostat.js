@@ -16,20 +16,20 @@ Thermostat.prototype.up = function(){
   this.setUsage();
 };
 
-Thermostat.prototype.down = function() {
+Thermostat.prototype.down = function(){
   this.checkMaxMin();
   this.temperature -= 1;
   this.setUsage();
 };
 
 Thermostat.prototype.setPowerSaving = function(){
-  this.powerSaving = !this.powerSaving
+  this.powerSaving = !this.powerSaving;
   this.autoRegulate();
 };
 
 Thermostat.prototype.autoRegulate = function(){
   if (this.powerSaving && this.temperature > 25) {
-    this.temperature = 25
+    this.temperature = 25;
   }
 };
 
