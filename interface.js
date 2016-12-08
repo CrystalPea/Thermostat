@@ -29,6 +29,7 @@ $("#power-saving").click(function(){
 
 function displayTemperature(){
   $("#current-temperature").text(thermostat.temperature);
+  $("#current-temperature").attr('class', thermostat.usage);
 };
 
 
