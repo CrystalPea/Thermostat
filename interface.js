@@ -4,6 +4,13 @@ $.get('http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=ec56c5c9
   $("#temperature-outside").text(data.main.temp + "°C");
 });
 
+$('#current-city').change(function() {
+  var city = $('#current-city').val();
+  $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric', function(data) {
+    $('#temperature-outside').text(data.main.temp)
+  })
+});
+
 
 $("#current-temperature").text(thermostat.temperature + "°C");
 
