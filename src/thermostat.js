@@ -22,8 +22,15 @@ Thermostat.prototype.down = function() {
   this.setUsage();
 };
 
-Thermostat.prototype.setPowerSaving = function(boolean){
-  this.powerSaving = boolean;
+Thermostat.prototype.setPowerSaving = function(){
+  this.powerSaving = !this.powerSaving
+  this.autoRegulate();
+};
+
+Thermostat.prototype.autoRegulate = function(){
+  if (this.powerSaving && this.temperature > 25) {
+    this.temperature = 25
+  }
 };
 
 Thermostat.prototype.reset = function(){

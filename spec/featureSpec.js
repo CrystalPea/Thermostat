@@ -40,7 +40,6 @@ describe("Feature Test", function() {
   });
 
   it("should not be possible to increase temperature >25 if power saving is on", function(){
-    thermostat.setPowerSaving(true);
     for (var i = 0; i < 5; i++) {
       thermostat.up();
     }
@@ -48,7 +47,7 @@ describe("Feature Test", function() {
   });
 
   it("should not be possible to increase temperature > 32 if power saving is off", function(){
-    thermostat.setPowerSaving(false);
+    thermostat.setPowerSaving();
     for (var i = 0; i < 12; i++) {
       thermostat.up();
     }

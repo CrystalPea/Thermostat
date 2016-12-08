@@ -59,29 +59,37 @@ describe("Thermostat", function() {
   describe("#power saving", function(){
 
     it("should be possible to turn power saving on", function() {
-      thermostat.setPowerSaving(true);
       expect(thermostat.powerSaving).toBeTruthy();
     });
 
     it("should be possible to turn power saving off", function(){
-      thermostat.setPowerSaving(false);
+      thermostat.setPowerSaving();
       expect(thermostat.powerSaving).toBeFalsy();
     });
 
     it("should not be possible to increase temperature >25 if power saving is on", function(){
-      thermostat.setPowerSaving(true);
       for (var i = 0; i < 5; i++) {
         thermostat.up();
       }
-      expect(function(){thermostat.up();}).toThrowError("Power saving on. Max temperature 25 degrees.")
+      var message = "Power saving on. Max temperature 25 degrees."
+      expect(function(){thermostat.up();}).toThrowError(message)
     });
 
     it("should not be possible to increase temperature > 32 if power saving is off", function(){
-      thermostat.setPowerSaving(false);
+      thermostat.setPowerSaving();
       for (var i = 0; i < 12; i++) {
         thermostat.up();
       }
       expect(function(){thermostat.up();}).toThrowError("Maximum temperature reached.")
+    });
+
+    it("should bring temp down to 25 if it's above that and power saving mode being turned on", function(){
+      thermostat.setPowerSaving();
+      for (var i = 0; i < 7; i++) {
+        thermostat.up();
+      }
+      thermostat.setPowerSaving();
+      expect(thermostat.temperature).toEqual(25);
     });
 
   });
