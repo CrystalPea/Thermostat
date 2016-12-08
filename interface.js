@@ -15,12 +15,16 @@ $("#reset").click(function(){thermostat.reset();});
 $("#power-saving").click(function(){
   thermostat.setPowerSaving();
   var message;
+  var message2;
   if (thermostat.powerSaving) {
     message = "OFF";
+    message2 = "ON";
   } else {
     message = "ON";
+    message2 = "OFF";
   }
   $("#power-saving").text("Turn Power Saving " + message);
+  $("#power-saving-status").text("Power Saving mode is " + message2);
 });
 
 
