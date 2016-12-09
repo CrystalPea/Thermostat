@@ -38,7 +38,7 @@ Thermostat.prototype.reset = function(){
 };
 
 Thermostat.prototype.checkMaxMin = function() {
-  if (this.powerSaving === true && this.temperature >= POWER_SAVING_MAXIMUM_TEMPERATURE ) {
+  if (this.powerSaving === true && this.temperature > POWER_SAVING_MAXIMUM_TEMPERATURE ) {
     throw new Error("Power saving on. Max temperature 25 degrees.")
   };
   if (this.temperature >= MAXIMUM_TEMPERATURE ) {
