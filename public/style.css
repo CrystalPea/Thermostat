@@ -1,3 +1,12 @@
+{
+  padding: 0; margin: 0;
+}
+
+#document{
+  text-align: center;
+  font-family: Impact, Charcoal, sans-serif; 
+}
+
 .low-usage{
   color: green;
 }
@@ -6,4 +15,28 @@
 }
 .medium-usage{
   color:black;
+}
+
+
+#display, #regulation{
+  display: inline-block;
+}
+
+#display{
+  float: center;
+  width: 300px;
+  margin-right: 20px;
+  text-align: center;
+}
+
+#regulation{
+  float: center;
+  text-align:left;
+  width: 70px;
+  vertical-align: top;
+  margin-top: 80px;
+}
+
+#regulation-up, #regulation-down{
+  width: 50px;
 }

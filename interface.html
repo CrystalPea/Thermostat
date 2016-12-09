@@ -9,30 +9,36 @@
 
 <link rel='stylesheet' type='text/css' href='public/style.css'/>
 
-  <section>
-    <script src="src/Thermostat.js"></script>
-    <script src="lib/jquery-3.1.1.js"></script>
-    <script src="interface.js"></script>
+  <section id="document">
+    <div id="display">
+      <script src="src/Thermostat.js"></script>
+      <script src="lib/jquery-3.1.1.js"></script>
+      <script src="interface.js"></script>
 
-    <h1 id="title">Thermostat</h1>
-    <h2 id="temp-display" class='medium-usage'> Def <h2>
-    <h4 id="temp-outside"> Temperature Outside </h4>
-    <select id="current-city">
-        <option value="london">London</option>
-        <option value="newyork">New York</option>
-        <option value="paris">Paris</option>
-        <option value="tokyo">Tokyo</option>
-    </select>
+      <h1 id="title">Thermostat</h1>
+      <h2 id="temp-display" class='medium-usage'> Def <h2>
+      <h4 id="temp-outside"> Temperature Outside </h4>
+      <select id="current-city">
+          <option value="london">London</option>
+          <option value="newyork">New York</option>
+          <option value="paris">Paris</option>
+          <option value="tokyo">Tokyo</option>
+      </select>
+      <h3 id='power-saving-display'> Power Saving mode is ON</h3>
+      <p>
+        <button id="reset">Reset</button>
+        <button id="power-saving">Turn Power Saving OFF</button>
+      </p>
+    </div>
 
 
-    <h3 id='power-saving-display'> Power Saving mode is ON</h3>
 
-    <p>
-      <button id="regulation-up">Up</button>
-      <button id="regulation-down">Down</button>
-      <button id="reset">Reset</button>
-      <button id="power-saving">Turn Power Saving OFF</button> </li>
-    </p>
+
+
+    <div id="regulation">
+      <input type="image" id="regulation-up" src="./up.jpg" ></input>
+      <input type="image" id="regulation-down" src="./down.jpg" ></input>
+      </div>
   </section>
 </body>
 </html>
