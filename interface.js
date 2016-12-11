@@ -19,16 +19,16 @@ $('#current-city').change(function() {
 });
 
 // saving settings to database
-$("#save-settings").click(function(){
-    $.post('/app/save',
-    {
-        temperature: thermostat.temperature
-        power_saving: thermostat.isPowerSaving
-        city: $('#current-city').val();
-    }, function(data){
-        $("#saving-confirmation").text("Saved settings: temperature: " + thermostat.temperature + ", power-saving: " + thermostat.isPowerSaving + ", city: " + $('#current-city').val(););
-    });
-});
+// $("#save-settings").click(function(){
+//     $.post('/app/save',
+//     {
+//         temperature: thermostat.temperature
+//         power_saving: thermostat.isPowerSaving
+//         city: $('#current-city').val();
+//     }, function(data){
+//         $("#saving-confirmation").text("Saved settings: temperature: " + thermostat.temperature + ", power-saving: " + thermostat.isPowerSaving + ", city: " + $('#current-city').val(););
+//     });
+// });
 
   $("#regulation-up").click(function() {
     thermostat.up();
